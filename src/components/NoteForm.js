@@ -26,7 +26,7 @@ const NoteForm = ({ user }) => {
         value={text}
         onChange={handleChange}
       />
-      <button type="submit">Add Note</button>
+      <button type="submit">Add Todo</button>
     </form>
   )
 }
