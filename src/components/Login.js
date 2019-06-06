@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
+import firebase from '../utils/firebase'
 
-const Login = () => {
+const Login = ({ history }) => {
+  const [newUser, setNewUser] = useState({ email: '', password: '' })
+  const [errors, setErrors] = useState()
+
+  const handleChange = (e) => {
+    setNewUser({...newUser, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const {email, password} = newUser
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => history.push('/'))
+    .catch(err => {
+      setErrors(err.message)
+    })
+  }
+
   return (
-    <h1>
-      Login Page!
-    </h1>
+    <>
+      {errors && <h3>{errors}</h3>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          onChange={handleChange}
+          value={newUser.email}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          onChange={handleChange}
+          value={newUser.password}
+        />
+        <button type="submit">Login</button>
+      </form>
+    </>
   )
 }
 
