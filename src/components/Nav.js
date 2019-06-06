@@ -9,7 +9,10 @@ const Nav = ({ user }) => {
       {user.uid ?
         <Link className="nav-link right" to="/logout">Logout</Link>
         :
-        <Link className="nav-link right" to="/login">Login</Link>
+        <>
+          <Link className="nav-link right" to="/register">Register</Link>
+          <Link className="nav-link right" to="/login">Login</Link>
+        </>
       }
       <Link className="nav-link right" to='/notes'>{user.email}</Link>
     </nav>

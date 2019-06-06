@@ -9,8 +9,7 @@ const Logout = ({ user, history }) => {
   }, [history, user.uid])
 
   return (
-    <>
-    </>
+    <h1>Logging Out...</h1>
   )
 }
 
