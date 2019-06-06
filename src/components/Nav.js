@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import firebase from '../utils/firebase'
 
 const Nav = ({ user, history }) => {
@@ -8,13 +8,12 @@ const Nav = ({ user, history }) => {
   }
 
   return (
-    <>
-      <h1>
-        Todo List
-      </h1>
-      <p>{user.email}</p>
-      {user.uid && <button onClick={logout}>Logout</button>}
-    </>
+    <nav>
+      <Link className="nav-link" to="/">Todo List</Link>
+      {user.uid && <Link className="nav-link" to="/notes">My Todos</Link>}
+      {user.uid ? <button className="nav-link right" onClick={logout}>Logout</button> : <button className="nav-link right" onClick={() => history.push('/login')}>Login</button>}
+      <Link className="nav-link right" to='/notes'>{user.email}</Link>
+    </nav>
   )
 }
 
