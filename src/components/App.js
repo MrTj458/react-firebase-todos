@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import firebase from '../utils/firebase'
 
@@ -9,19 +9,21 @@ import Login from './Login'
 import Notes from './Notes'
 
 function App() {
+  const [user, setUser] = useState({})
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log(user)
+        setUser(user)
       } else {
-        console.log('No User');
+        setUser({})
       }
     })
   }, [])
 
   return (
     <>
-      <Nav />
+      <Nav user={user} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/register" component={Register} />
