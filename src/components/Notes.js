@@ -1,10 +1,13 @@
 import React from 'react'
+import NoteForm from './NoteForm'
+import NoteList from './NoteList'
 
-const Notes = () => {
+const Notes = ({ user }) => {
   return (
-    <h1>
-      Notes Page
-    </h1>
+    <>
+      <NoteForm user={user} />
+      <NoteList user={user} />
+    </>
   )
 }
 
