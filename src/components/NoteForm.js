@@ -15,6 +15,7 @@ const NoteForm = ({ user }) => {
         text,
         uid: user.uid
       })
+      setText('')
     }
   }
 

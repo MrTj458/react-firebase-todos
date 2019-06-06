@@ -6,6 +6,7 @@ import Nav from './Nav'
 import Home from './Home'
 import Register from './Register'
 import Login from './Login'
+import Logout from './Logout'
 import Notes from './Notes'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/logout" render={(props) => <Logout {...props} user={user} />} />
         <Route exact path="/notes" render={(props) => <Notes {...props} user={user} />} />
       </Switch>
     </>

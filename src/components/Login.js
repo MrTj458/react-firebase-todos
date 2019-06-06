@@ -13,7 +13,7 @@ const Login = ({ history }) => {
     e.preventDefault()
     const {email, password} = newUser
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => history.push('/'))
+    .then(() => history.push('/notes'))
     .catch(err => {
       setErrors(err.message)
     })

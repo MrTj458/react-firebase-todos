@@ -17,7 +17,7 @@ const Register = ({ history }) => {
       return
     }
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => history.push('/'))
+    .then(() => history.push('/notes'))
     .catch(err => {
       setErrors(err.message)
     })
