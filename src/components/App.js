@@ -30,7 +30,7 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" render={(props) => <Logout {...props} user={user} />} />
-        <Route exact path="/notes" render={(props) => <Notes {...props} user={user} />} />
+        <Route exact path="/todos" render={(props) => <Notes {...props} user={user} />} />
       </Switch>
     </>
   );

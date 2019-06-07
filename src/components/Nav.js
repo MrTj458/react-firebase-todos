@@ -5,7 +5,7 @@ const Nav = ({ user }) => {
   return (
     <nav>
       <Link className="nav-link" to="/">Todo List</Link>
-      {user.uid && <Link className="nav-link" to="/notes">My Todos</Link>}
+      {user.uid && <Link className="nav-link" to="/todos">My Todos</Link>}
       {user.uid ?
         <Link className="nav-link right" to="/logout">Logout</Link>
         :
