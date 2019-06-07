@@ -25,31 +25,37 @@ const Register = ({ history }) => {
 
   return (
     <>
-      {errors && <h3>{errors}</h3>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          onChange={handleChange}
-          value={newUser.email}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={handleChange}
-          value={newUser.password}
-        />
-        <input
-          type="password"
-          name="password2"
-          placeholder="confirm password"
-          onChange={handleChange}
-          value={newUser.password2}
-        />
-        <button type="submit">Register</button>
-      </form>
+      <div className="form-container">
+        <h1>Register</h1>
+        {errors && <h3 className="error-message">{errors}</h3>}
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            onChange={handleChange}
+            value={newUser.email}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
+            value={newUser.password}
+          />
+          <label htmlFor="password2">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            placeholder="confirm password"
+            onChange={handleChange}
+            value={newUser.password2}
+          />
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </>
   )
 }

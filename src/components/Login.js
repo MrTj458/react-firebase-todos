@@ -21,24 +21,29 @@ const Login = ({ history }) => {
 
   return (
     <>
-      {errors && <h3>{errors}</h3>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          onChange={handleChange}
-          value={newUser.email}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={handleChange}
-          value={newUser.password}
-        />
-        <button type="submit">Login</button>
-      </form>
+      <div className="form-container">
+        <h1>Login</h1>
+        {errors && <h3 className="error-message">{errors}</h3>}
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            onChange={handleChange}
+            value={newUser.email}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
+            value={newUser.password}
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </>
   )
 }
