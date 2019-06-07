@@ -24,17 +24,15 @@ const NoteList = ({ user }) => {
 
   return (
     <>
-      <h2>Todos:</h2>
-      <ul>
-        {todos.map(todo => {
-          return (
-            <li key={todo.id}>
-              {todo.text}
-              <button onClick={() => deleteTodo(todo.id)}>X</button>
-            </li>
-          )
-        })}
-      </ul>
+      {todos.map(todo => {
+        return (
+          <div className="todo-card" key={todo.id}>
+            <button className="delete-button" onClick={() => deleteTodo(todo.id)}>X</button>
+            <br/>
+            <p>{todo.text}</p>
+          </div>
+        )
+      })}
     </>
   )
 }

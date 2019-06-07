@@ -5,8 +5,13 @@ import NoteList from './NoteList'
 const Notes = ({ user }) => {
   return (
     <>
-      <NoteForm user={user} />
-      <NoteList user={user} />
+      <h1>My Todos</h1>
+      <div className="form-container">
+        <NoteForm user={user} />
+      </div>
+      <div className="todos-container">
+        <NoteList user={user} />
+      </div>
     </>
   )
 }

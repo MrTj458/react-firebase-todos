@@ -24,6 +24,7 @@ const NoteForm = ({ user }) => {
       <input
         type="text"
         name="text"
+        placeholder="Make a new todo!"
         value={text}
         onChange={handleChange}
       />
