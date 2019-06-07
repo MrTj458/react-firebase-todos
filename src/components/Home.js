@@ -1,10 +1,16 @@
 import React from 'react'
+import NewUserHome from './NewUserHome'
+import LoggedInHome from './LoggedInHome'
 
-const Home = () => {
+const Home = ({ user }) => {
   return (
-    <h1>
-      Home Page!
-    </h1>
+    <>
+      {user.uid ?
+        <LoggedInHome />
+        :
+        <NewUserHome />
+      }
+    </>
   )
 }
 

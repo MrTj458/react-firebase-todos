@@ -26,7 +26,7 @@ function App() {
     <>
       <Nav user={user} />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" render={(props) => <Home {...props} user={user} />} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" render={(props) => <Logout {...props} user={user} />} />
